@@ -1,3 +1,4 @@
+fix bug
 this is a file for branch tests
 feature 1 fixed conflict
 dev change
