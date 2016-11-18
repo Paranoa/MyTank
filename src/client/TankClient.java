@@ -44,7 +44,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	 */
 	private static final long serialVersionUID = 1L;
 
-// ½á¹¹£º  component--container--window--frame--jframe
+// ï¿½á¹¹ï¿½ï¿½  component--container--window--frame--jframe
 	
 	private BasicTank playerTank;
 	private MainBase mainBase;
@@ -73,7 +73,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	private int gameSpeed = Global.GAMESPEED;
 	
 	public TankClient(){
-		initImagesPath();//³õÊ¼»¯µÄÍ¬Ê±³õÊ¼»¯ÓÎÏ·¿ªÊ¼Ç°Ðè¼ÓÔØµÄÍ¼Æ¬Â·¾¶
+		initImagesPath();//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Í¬Ê±ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½Ê¼Ç°ï¿½ï¿½ï¿½ï¿½Øµï¿½Í¼Æ¬Â·ï¿½ï¿½
 	}
 
 	
@@ -122,7 +122,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	}
 	
 
-	private class MainBase extends BasicObstacle{ //Õâ¸ö±íÊ¾ÓÎÏ·µÄÖ÷»ùµØ
+	private class MainBase extends BasicObstacle{ //ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			obWidth = 80;
 			obHeight = 80;
@@ -140,7 +140,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		
 	}
 	
-	//---------------------------------ÓÎÏ·Á÷³Ì¿ØÖÆ²¿·Ö------------------------------------------------
+	//---------------------------------ï¿½ï¿½Ï·ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½Æ²ï¿½ï¿½ï¿½------------------------------------------------
 	public void newGame() {
 		
 		launchFrame();
@@ -148,7 +148,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		loadImages(imagesPath);
 		updateBeforePause();
 		countDown();
-		setComputerControl();//µ¹¼ÆÊ±½áÊøÊ±Ìí¼ÓÌ¹¿ËµÄµçÄÔ¿ØÖÆ
+		setComputerControl();//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ì¹ï¿½ËµÄµï¿½ï¿½Ô¿ï¿½ï¿½ï¿½
 		startGameThread();
 		
 
@@ -166,7 +166,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		showPauseWindow();
 	}
 	
-	//------------ÓÎÏ·¿ªÊ¼Ç°ÏÈÔÚ¿´²»¼ûµÄÎ»ÖÃ»­Ò»´ÎÍ¼Æ¬
+	//------------ï¿½ï¿½Ï·ï¿½ï¿½Ê¼Ç°ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã»ï¿½Ò»ï¿½ï¿½Í¼Æ¬
 	private void loadImages(ArrayList<String> images){
 		for(String image:images){
 			this.getGraphics().drawImage(Global.toolKit.getImage(Global.loader.getResource(image)),-100,-100,null);
@@ -176,10 +176,10 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	
 	private void updateBeforePause(){	
 		this.update(this.getGraphics());
-		this.update(this.getGraphics());//µÚÒ»´Î»­Ê±¿´²»¼û
+		this.update(this.getGraphics());//ï¿½ï¿½Ò»ï¿½Î»ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 	}
-	//-------------¿ªÊ¼Ê±µÄµ¹¼ÆÊ±
+	//-------------ï¿½ï¿½Ê¼Ê±ï¿½Äµï¿½ï¿½ï¿½Ê±
 	private void countDown(){	
 		Image[] images = new Image[3];
 		images[0]=Global.toolKit.getImage(Global.loader.getResource("images/count_3.png"));
@@ -219,16 +219,16 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	}
 	
 	
-	//-----¿ªÆôÓÎÏ·ÖÐµÄ3¸öÏß³Ì
-	private class AutoPaintThread implements Runnable{//Ã¿¸ôgameSpeedÃëÖØ»­
+	//-----ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½Ðµï¿½3ï¿½ï¿½ï¿½ß³ï¿½
+	private class AutoPaintThread implements Runnable{//Ã¿ï¿½ï¿½gameSpeedï¿½ï¿½ï¿½Ø»ï¿½
 		
 		public void run() {
 			while(true){
 				while(playing){
-							//¿ÉÒÔ·ÃÎÊÍâ²¿ÀàµÄÊôÐÔºÍ·½·¨£¬thisµÄÇø±ð¡¾ this ºÍ (TankClient.this)¡¿
-					repaint();		//componentµÄrepaint·½·¨    Èç¹û´Ë×é¼þÊÇÇáÁ¿×é¼þ£¬Ôò´Ë·½·¨»á¾¡¿ìµ÷ÓÃ´Ë×é¼þµÄ paint ·½·¨¡£·ñÔò´Ë·½·¨»á¾¡¿ìµ÷ÓÃ´Ë×é¼þµÄ update ·½·¨¡£ 
-									// ÔÚÕâÀï»áµ÷ÓÃÒ»´Îpaint·½·¨£¬È»ºóµ÷ÓÃ±¾Àà µÄupdate ·½·¨ ,¶ø update ·½·¨£¨Õâ¸ö·½·¨ÖÐËÆºõ¡®²Á³ýÁËÔ­Í¼¡¯£¬ÖØÐ´¸Ã·½·¨Òª×¢Òâ²Á³ý£©»áµ÷ÓÃ±¾ÀàµÄ paint·½·¨
-									//×¢ÒâÕâ¸ö·½·¨»á±»(²»ÖªµÀÊ²Ã´)×Ô¶¯µ÷ÓÃ~¼´Ê¹²»ÕâÑùÏÔÊ½µÄµ÷ÓÃ
+							//ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÔºÍ·ï¿½ï¿½ï¿½ï¿½ï¿½thisï¿½ï¿½ï¿½ï¿½ï¿½ this ï¿½ï¿½ (TankClient.this)ï¿½ï¿½
+					repaint();		//componentï¿½ï¿½repaintï¿½ï¿½ï¿½ï¿½    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½á¾¡ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ paint ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½á¾¡ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ update ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+									// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½paintï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ ï¿½ï¿½update ï¿½ï¿½ï¿½ï¿½ ,ï¿½ï¿½ update ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½Ã·ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ paintï¿½ï¿½ï¿½ï¿½
+									//×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á±»(ï¿½ï¿½Öªï¿½ï¿½Ê²Ã´)ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½Äµï¿½ï¿½ï¿½
 					try {
 						Thread.sleep(TankClient.this.gameSpeed);
 					} catch (InterruptedException e) {
@@ -236,7 +236,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 					}
 				}
 				try {
-					Thread.sleep(500);//ÔÝÍ£Ê±Ã¿×öÒ»´ÎsleepÒ»¶ÎÊ±¼ä¡£·ñÔò»á¿¨ËÀ
+					Thread.sleep(500);//ï¿½ï¿½Í£Ê±Ã¿ï¿½ï¿½Ò»ï¿½ï¿½sleepÒ»ï¿½ï¿½Ê±ï¿½ä¡£ï¿½ï¿½ï¿½ï¿½á¿¨ï¿½ï¿½
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -245,7 +245,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		}
 	}
  	
-	private class AutoCreateEntityThread implements Runnable{//Ã¿¸ô5ÃëÌí¼ÓµÐ·½Ì¹¿Ë¡¢µÀ¾ß	
+	private class AutoCreateEntityThread implements Runnable{//Ã¿ï¿½ï¿½5ï¿½ï¿½ï¿½ï¿½ÓµÐ·ï¿½Ì¹ï¿½Ë¡ï¿½ï¿½ï¿½ï¿½ï¿½	
 		@Override
 		public void run() {
 			while(true){
@@ -329,7 +329,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 //	
 
 	
-	//------------------------------------ÓÎÏ·ÔªËØ³õÊ¼»¯²¿·Ö-----------------------------------------
+	//------------------------------------ï¿½ï¿½Ï·Ôªï¿½Ø³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-----------------------------------------
 	private void initGameEntities(){
 		createMap();
 		createItems(5);
@@ -370,7 +370,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 
 		 
 		 
-		 createObstacles(420,580,2,6,new BrickWall());//ÕâÒ»¶ÎÊÇÔì»ùµØ±ßµÄÇ½
+		 createObstacles(420,580,2,6,new BrickWall());//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ßµï¿½Ç½
 		 createObstacles(540,580,2,6,new BrickWall());
 		 createObstacles(460,580,4,2,new BrickWall());
 
@@ -428,8 +428,8 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		tanks.add(playerTank);
 	}
 	
-	private void createTanks(int left,int top,int width,int height,BasicTank tank,int num,int team,boolean computerControl){//ÓÚËæ»úÎ»ÖÃÉú³Étank²ÎÊýÎª£ºtankµÄ(life ÊýÁ¿  ¶ÓÎé)
-		int count =0;		//Éú³ÉÎ»ÖÃËæ»ú£¨Ö¸¶¨·¶Î§ left top width heigth£©¡¢Ö¸¶¨ÊýÁ¿(num)¡¢Ö¸¶¨¶ÓÎé(team)µÄÌ¹¿Ë
+	private void createTanks(int left,int top,int width,int height,BasicTank tank,int num,int team,boolean computerControl){//ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½tankï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½tankï¿½ï¿½(life ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½)
+		int count =0;		//ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Î§ left top width heigthï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(num)ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(team)ï¿½ï¿½Ì¹ï¿½ï¿½
 		Random r =new Random();
 		while(count<num){
 	
@@ -443,7 +443,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 				t.setLeft(r.nextInt(width)+left);
 				t.setTop(r.nextInt(height)+top);
 				
-				if(isMovable(t)){  //Î»ÖÃºÏÀíµÄÇé¿öÏÂ(ÓÐleft£¬topºÍ×ÔÉíµÄwidth£¬height¾ÍÄÜÅÐ¶ÏÎ»ÖÃÊÇ·ñÎªºÏÀí)
+				if(isMovable(t)){  //Î»ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½leftï¿½ï¿½topï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½widthï¿½ï¿½heightï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½Î»ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½)
 					t.setTankDirection(Direction.D);
 					t.setListener(this);
 					BasicBullet bullet = new CommonBullet();
@@ -464,7 +464,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	}
 	
 	//-------------
-	public ArrayList<BasicItem> initAllItemsList(){//³õÊ¼»¯´ú±íÈ«µÀ¾ßµÄlist£¬ÓÃÓÚÈ·¶¨Ëæ»ú»ñµÃµÄ·¶Î§
+	public ArrayList<BasicItem> initAllItemsList(){//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ßµï¿½listï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ·ï¿½Î§
 		ArrayList<BasicItem> allItem = new ArrayList<BasicItem>();
 		allItem.add(new ItemSuperBullet());
 		allItem.add(new ItemSupreMode());
@@ -476,7 +476,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		return allItem;
 	}
 	
-	private BasicItem createItem(BasicItem i,int left,int top,TankClient listener){//Ö¸¶¨itemÏÂ±ê (ÔÚitemListÖÐ)£¬left£¬top
+	private BasicItem createItem(BasicItem i,int left,int top,TankClient listener){//Ö¸ï¿½ï¿½itemï¿½Â±ï¿½ (ï¿½ï¿½itemListï¿½ï¿½)ï¿½ï¿½leftï¿½ï¿½top
 		BasicItem item = null; 		
 		try{
 			item = i.getClass().newInstance();
@@ -493,24 +493,24 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	
 
 
-	//-----------------------------------ÓÎÏ·´°Ìå²¿·Ö----------------------------------------------------
+	//-----------------------------------ï¿½ï¿½Ï·ï¿½ï¿½ï¿½å²¿ï¿½ï¿½----------------------------------------------------
 	
-	public void launchFrame(){//¼ÓÔØÓÎÏ·´°Ìå
+	public void launchFrame(){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
 		setTitle("TankWar");
 		setLocation(Global.LOCATION_LEFT,Global.LOCATION_TOP);
 		setSize(Global.WIDTH,Global.HEIGHT);
 		setResizable(false);
 		setBackground(Global.BGCOLOR);
 
-		//ÎªframeÌí¼Ó¸÷ÖÖlistener
-		addWindowListener(new MyWindowAdapter());//¼Ì³ÐadapterÀà£¬ÖØÐ´ÐèÒªÓÃµ½µÄ·½·¨;	JFrameÖÐ²ÅÓÐsetDefaultCloseOperation,Êµ¼ÊÒ²ÊÇÓÃµ½ÁËsystem.exit	
+		//Îªframeï¿½ï¿½Ó¸ï¿½ï¿½ï¿½listener
+		addWindowListener(new MyWindowAdapter());//ï¿½Ì³ï¿½adapterï¿½à£¬ï¿½ï¿½Ð´ï¿½ï¿½Òªï¿½Ãµï¿½ï¿½Ä·ï¿½ï¿½ï¿½;	JFrameï¿½Ð²ï¿½ï¿½ï¿½setDefaultCloseOperation,Êµï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½system.exit	
 		addKeyListener(new MyKeyAdapter());
 		setVisible(true);	
 	}
 	
 
 	
-	//----------ÎªÓÎÏ·´°ÌåÌí¼ÓµÄ¼àÌýÆ÷Àà
+	//----------Îªï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private class MyWindowAdapter extends WindowAdapter {
 		
 		@Override
@@ -521,7 +521,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		
 		@Override
 		public void windowClosing(WindowEvent e) {
-			System.exit(0);//0 ±íÊ¾ÎÞÒì³£ÍË³ö
+			System.exit(0);//0 ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ì³£ï¿½Ë³ï¿½
 		}
 	}
 	
@@ -553,37 +553,37 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	}
 	
 	
-	//--------------ÖØÐ´ÓÎÏ·´°ÌåµÄupdate·½·¨
+	//--------------ï¿½ï¿½Ð´ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½updateï¿½ï¿½ï¿½ï¿½
 	@Override
-	public void update(Graphics g) {//containerÖØÐ´ÁËcomponentµÄ update·½·¨ £¬ÕâÀïÔÙ´ÎÖØÐ´ 
+	public void update(Graphics g) {//containerï¿½ï¿½Ð´ï¿½ï¿½componentï¿½ï¿½ updateï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½Ð´ 
 		if(offScreenImage==null){
-			offScreenImage=createImage(Global.WIDTH,Global.HEIGHT);//componentµÄ·½·¨   createImage(int width, int height) 
-		}									// 				     ´´½¨Ò»·ùÓÃÓÚË«»º³åµÄ¡¢¿ÉÔÚÆÁÄ»Íâ»æÖÆµÄÍ¼Ïñ¡£
+			offScreenImage=createImage(Global.WIDTH,Global.HEIGHT);//componentï¿½Ä·ï¿½ï¿½ï¿½   createImage(int width, int height) 
+		}									// 				     ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½Æµï¿½Í¼ï¿½ï¿½
 			
-			Graphics ig=offScreenImage.getGraphics();	//ÄÃµ½»º³åÍ¼Æ¬µÄ¡®±Ê¡¯	
+			Graphics ig=offScreenImage.getGraphics();	//ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½Ä¡ï¿½ï¿½Ê¡ï¿½	
 			
-			//ÔÚ»º³åÍ¼Æ¬ÉÏ»æÍ¼		
-			cleanBackGround(ig);		//ÒòÎª×ÔµÚ¶þ´ÎÖ®ºóÓÃµÄ¶¼ÊÇÒÔÇ°imageµÄ£¬ËùÒÔÐèÒªÇå³ýÆÁÄ»	
-			myPaint(ig);	//ÕâÀïÎÒµ÷ÓÃÒ»¸ö×Ô¼ºÐ´µÄMypaint·½·¨£¨Ô­À´µÄupdate»áµ÷ÓÃpaint·½·¨£©
+			//ï¿½Ú»ï¿½ï¿½ï¿½Í¼Æ¬ï¿½Ï»ï¿½Í¼		
+			cleanBackGround(ig);		//ï¿½ï¿½Îªï¿½ÔµÚ¶ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ÃµÄ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ç°imageï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ä»	
+			myPaint(ig);	//ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ô¼ï¿½Ð´ï¿½ï¿½Mypaintï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½updateï¿½ï¿½ï¿½ï¿½ï¿½paintï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			
 			
-			//°Ñ»º³åÍ¼Æ¬»­µ½ÆÁÄ»ÉÏ		
-			g.drawImage(offScreenImage, 0, 0, null);	//×îºóÒ»¸ö²ÎÊýImageObserver ²»¹Ü~	
+			//ï¿½Ñ»ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½		
+			g.drawImage(offScreenImage, 0, 0, null);	//ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ImageObserver ï¿½ï¿½ï¿½ï¿½~	
 	}
 	
 	//	@Override
-	//	public void paint(Graphics arg0) {//containerÖØÐ´ÁËcomponentµÄ paint·½·¨ £¬ÕâÀïÔÙ´ÎÖØÐ´ 
-	//		System.out.println("ÓÃ²»µ½µÄpaint");
+	//	public void paint(Graphics arg0) {//containerï¿½ï¿½Ð´ï¿½ï¿½componentï¿½ï¿½ paintï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½Ð´ 
+	//		System.out.println("ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½paint");
 	//	}
 	//	
 	
 	private void cleanBackGround(Graphics g){
 		g.setColor(Global.BGCOLOR);
-		g.fillRect(0, 0, Global.WIDTH, Global.HEIGHT); //rectangle ¾ØÐÎ  
+		g.fillRect(0, 0, Global.WIDTH, Global.HEIGHT); //rectangle ï¿½ï¿½ï¿½ï¿½  
 		
 	}
 	
-	public void myPaint(Graphics g) {//Ïò»º³åÍ¼Æ¬»­Í¼		
+	public void myPaint(Graphics g) {//ï¿½ò»º³ï¿½Í¼Æ¬ï¿½ï¿½Í¼		
 		drawBullets(g);
 		drawTanks(g);
 		drawMap(g);
@@ -593,7 +593,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		drawScore(g);	
 	}
 	
-	//--------ËùÓÐÓÎÏ·ÔªËØµÄ»­Í¼²½Öè¶¼ÊÇ£ºÏÈÉ¾³ýÎÞÐ§µÄÓÎÏ·ÔªËØ£¬È»ºó¶ÔÃ¿¸öÓÎÏ·ÔªËØµ÷ÓÃdraw·½·¨
+	//--------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·Ôªï¿½ØµÄ»ï¿½Í¼ï¿½ï¿½ï¿½è¶¼ï¿½Ç£ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Ï·Ôªï¿½Ø£ï¿½È»ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Ï·Ôªï¿½Øµï¿½ï¿½ï¿½drawï¿½ï¿½ï¿½ï¿½
 	private void drawBullets(Graphics g){
 		removeBulletByList();
 		for(BasicBullet b:bullets){
@@ -637,11 +637,11 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	}
 
 	
-	//---------------------------------ÏÂÃæµÄÊÇÊµÏÖµÄ¼àÌý·½·¨------------------------------------------------
+	//---------------------------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ÖµÄ¼ï¿½ï¿½ï¿½------------------------------------------------
 	//---------------------------Tank
 	@Override
 	public boolean tankMove(BasicTank tank) {	
-		if(tank==playerTank){ //Ö»ÓÐÍæ¼ÒÌ¹¿Ë¿ÉÒÔ³ÔµÀ¾ß
+		if(tank==playerTank){ //Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½Ë¿ï¿½ï¿½Ô³Ôµï¿½ï¿½ï¿½
 			tankCollisionItem(tank);
 		}
 		return isMovable(tank);
@@ -650,7 +650,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	@Override
 	public void tankFire(BasicBullet bullet) {
 		bullets.add(bullet);
-		System.out.println("Ìí¼ÓÒ»¸öÅÚµ¯£¡Ìí¼Ó¹ýºóbullets sizeÎª"+bullets.size());
+		System.out.println("ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½Ó¹ï¿½ï¿½bullets sizeÎª"+bullets.size());
 	}
 	
 
@@ -660,9 +660,9 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	
 	@Override
 	public boolean bulletMove(BasicBullet bullet){
-		boolean flag = true;  //Õâ¸öÖµÎªtrue ±íÊ¾×Óµ¯½«»áµ÷ÓÃ×Ô¼ºµÄdraw·½·¨
+		boolean flag = true;  //ï¿½ï¿½ï¿½ÖµÎªtrue ï¿½ï¿½Ê¾ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½drawï¿½ï¿½ï¿½ï¿½
 		
-		if(isOverView(bullet)){//³ö½çÔòÒÆ³ý
+		if(isOverView(bullet)){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ³ï¿½
 			removeBullet(bullet);
 			flag=false;
 		}
@@ -684,18 +684,18 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 
 	
 	//--------------
-	public void tankExplode(BasicTank tank) { //½«Õâ¸ötank¼ÓÈë´ýÉ¾³ýÁÐ±í
+	public void tankExplode(BasicTank tank) { //ï¿½ï¿½ï¿½ï¿½ï¿½tankï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½Ð±ï¿½
 		explodes.add(tank.tankExplode(this));
-		System.out.println("ÐÂÔöÒ»¸öÌ¹¿Ë±¬Õ¨--ÏÖÔÚsizeÎª"+explodes.size());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ì¹ï¿½Ë±ï¿½Õ¨--ï¿½ï¿½ï¿½ï¿½sizeÎª"+explodes.size());
 		removeTank(tank);
-		System.out.println("½«Ò»¸öÌ¹¿Ë¼ÓÈëÉ¾³ýÁÐ±í--removeTankList£¡");
+		System.out.println("ï¿½ï¿½Ò»ï¿½ï¿½Ì¹ï¿½Ë¼ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½Ð±ï¿½--removeTankListï¿½ï¿½");
 	}
 	
 	public void bulletExplode(BasicBullet bullet){
 		explodes.add(bullet.bulletExplode(this));
-		System.out.println("ÐÂÔöÒ»¸ö×Óµ¯±¬Õ¨--ÏÖÔÚsizeÎª"+explodes.size());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Õ¨--ï¿½ï¿½ï¿½ï¿½sizeÎª"+explodes.size());
 		removeBullet(bullet);
-		System.out.println("½«Ò»¸ö×Óµ¯¼ÓÈëÉ¾³ýÁÐ±í--removeTankList£¡");
+		System.out.println("ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½Ð±ï¿½--removeTankListï¿½ï¿½");
 	}
 	
 	public void removeTank(BasicTank tank){
@@ -710,14 +710,14 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		removeItemList.add(item);
 	}
 	
-	//----------------------------------ÏÂÃæµÄÊÇÒ»Ð©É¾³ý·½·¨---------------------------------------------------
+	//----------------------------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©É¾ï¿½ï¿½---------------------------------------------------
 	
 	
 
-	private void removeBulletByList() { 	//½«removeListÖÐµÄËùÓÐÔªËØ ÒÆ³ý,Õâ¸ö·½·¨½«ÔÚÃ¿´Î¡®»­Í¼¡¯Ö®Ç°µ÷ÓÃ
+	private void removeBulletByList() { 	//ï¿½ï¿½removeListï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ ï¿½Æ³ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½Î¡ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Ö®Ç°ï¿½ï¿½ï¿½ï¿½
 		for(BasicBullet rb:removeBulletList){
 			bullets.remove(rb);			
-			System.out.println("É¾³ýÒ»¸öÅÚµ¯£¡ÏÖÔÚµÄbullet sizeÎª"+bullets.size());
+			System.out.println("É¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½bullet sizeÎª"+bullets.size());
 		}		
 		removeBulletList = new ArrayList<BasicBullet>();
 	}
@@ -727,7 +727,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	private void removeTankByList() { 	
 		for(BasicTank t:removeTankList){
 			tanks.remove(t);			
-			System.out.println("É¾³ýÒ»¸öÌ¹¿Ë£¡ÏÖÔÚµÄtanks sizeÎª"+bullets.size());
+			System.out.println("É¾ï¿½ï¿½Ò»ï¿½ï¿½Ì¹ï¿½Ë£ï¿½ï¿½ï¿½ï¿½Úµï¿½tanks sizeÎª"+bullets.size());
 		}
 		removeTankList = new ArrayList<BasicTank>();
 	}
@@ -735,7 +735,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	private void removeObstacleByList(){
 		for(BasicObstacle o:removeObstacleList){
 			obstacles.remove(o);
-			System.out.println("É¾³ýÒ»¸öÕÏ°­Îï£¡ÏÖÔÚµÄobstacles sizeÎª"+obstacles.size());
+			System.out.println("É¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï£¡ï¿½ï¿½ï¿½Úµï¿½obstacles sizeÎª"+obstacles.size());
 		}
 		removeObstacleList = new ArrayList<BasicObstacle>();
 	}
@@ -743,7 +743,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	private void removeExplodeByList(){
 		for(Explode e:removeExplodeList){
 			explodes.remove(e);
-			System.out.println("É¾³ýÒ»¸ö±¬Õ¨£¡ÏÖÔÚµÄexplodes sizeÎª"+explodes.size());
+			System.out.println("É¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Õ¨ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½explodes sizeÎª"+explodes.size());
 		}
 		removeExplodeList = new ArrayList<Explode>();
 	}
@@ -751,7 +751,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	private void removeItemByList(){
 		for(BasicItem i:removeItemList){
 			items.remove(i);
-			System.out.println("É¾³ýÒ»¸öµÀ¾ß£¡ÏÖÔÚµÄitems sizeÎª"+items.size());
+			System.out.println("É¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½Úµï¿½items sizeÎª"+items.size());
 		}
 		removeItemList = new ArrayList<BasicItem>();
 	}
@@ -759,18 +759,18 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	
 	
 	//-----------------------------------------------------------------------------------
-	//ÕâÐ©ÓÃÀ´ÅÐ¶Ï×Óµ¯µÄÇé¿ö
+	//ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	
-	private boolean isOverView(BasicBullet bullet){//×Óµ¯ÊÇ·ñ³¬³ö±ß½ç
+	private boolean isOverView(BasicBullet bullet){//ï¿½Óµï¿½ï¿½Ç·ñ³¬³ï¿½ï¿½ß½ï¿½
 		return (bullet.getLeft()<=0-bullet.getBulletWidth()||bullet.getLeft()>=Global.WIDTH+bullet.getBulletWidth()||bullet.getTop()<=0-bullet.getBulletHeight()||bullet.getTop()>=Global.HEIGHT+bullet.getBulletHeight());
 	}
 	
 	
-	private boolean isCollisionTank(BasicBullet bullet){//×Óµ¯ÊÇ·ñÓëÌ¹¿ËÏà×²£¨½«²ÎÊýnexttankÓëtanksÁÐ±íÖÐµÄËùÓÐtank±È½Ï,thistankÒ²ÓÃÓÚÅÐ¶ÏÊÇ·ñ³åÍ»£©
+	private boolean isCollisionTank(BasicBullet bullet){//ï¿½Óµï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nexttankï¿½ï¿½tanksï¿½Ð±ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½tankï¿½È½ï¿½,thistankÒ²ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Í»ï¿½ï¿½
 		
-		for(BasicTank tank:tanks){ //ÄÃ³ötanksÖÐµÄËùÓÐtank,¿´¾ØÐÎÊÇ·ñÖØºÏ
-			if(tank.getRectangle().intersects(bullet.getRectangle())&&tank.getTeam()!=bullet.getTeam()){ //×Óµ¯ÓëÌ¹¿ËµÄ¡®¾ØÐÎ¡¯ ÖØºÏ ÇÒ²»ÊôÓÚÍ¬Ò»¸ö team
+		for(BasicTank tank:tanks){ //ï¿½Ã³ï¿½tanksï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½tank,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Øºï¿½
+			if(tank.getRectangle().intersects(bullet.getRectangle())&&tank.getTeam()!=bullet.getTeam()){ //ï¿½Óµï¿½ï¿½ï¿½Ì¹ï¿½ËµÄ¡ï¿½ï¿½ï¿½ï¿½Î¡ï¿½ ï¿½Øºï¿½ ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ team
 				hitTank(tank,bullet);				
 				return true;
 			}
@@ -778,16 +778,16 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		return false;
 	}
 	
-	private boolean isCollisionObstacle(BasicBullet bullet){ //×Óµ¯ÊÇ·ñÓëÕÏ°­ÎïÏà×²
+	private boolean isCollisionObstacle(BasicBullet bullet){ //ï¿½Óµï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½×²
 		for(BasicObstacle obstacle:obstacles){
-			if(obstacle.getRectangle().intersects(bullet.getRectangle())&&!obstacle.isThroughable()){//¾ØÐÎÖØµþÇÒÕÏ°­Îï"²»¿É´©¹ý"							
+			if(obstacle.getRectangle().intersects(bullet.getRectangle())&&!obstacle.isThroughable()){//ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½"ï¿½ï¿½ï¿½É´ï¿½ï¿½ï¿½"							
 				hitObstacle(obstacle, bullet);
 				return true;}
 		}
 		return false;
 	}
 	
-	private void hitTank(BasicTank tank,BasicBullet bullet){//×Óµ¯´òÌ¹¿Ë
+	private void hitTank(BasicTank tank,BasicBullet bullet){//ï¿½Óµï¿½ï¿½ï¿½Ì¹ï¿½ï¿½
 		
 		if(!tank.hitedByBullet(bullet)){
 			tankExplode(tank);
@@ -801,7 +801,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	}
 	
 	private void hitObstacle(BasicObstacle obstacle,BasicBullet bullet){
-		if(obstacle.isDestroyable()){	//ÕÏ°­ÎïÊÇ"¿É´Ý»ÙµÄ"²Å½«ÕÏ°­ÎïÉ¾³ý
+		if(obstacle.isDestroyable()){	//ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½"ï¿½É´Ý»Ùµï¿½"ï¿½Å½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½É¾ï¿½ï¿½
 			removeObstacleList.add(obstacle);
 			if(obstacle == mainBase){
 				mainBase = null;
@@ -812,8 +812,8 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 
 	
 	//-----------------------------------------------------------------------------------
-	//ÕâÐ©ÓÃÀ´ÅÐ¶ÏÌ¹¿ËµÄÇé¿ö
-	private BasicTank getNextTank(BasicTank tank){//¸ù¾Ýµ±Ç°tankµÄ·½Ïò»ñµÃÏÂÒ»´ÎmoveºóµÄtank £¨×¢Òâ£º·µ»ØµÄTankÀà Ö»ÓÐleft top width heightÊôÐÔ£©
+	//ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½Ì¹ï¿½Ëµï¿½ï¿½ï¿½ï¿½
+	private BasicTank getNextTank(BasicTank tank){//ï¿½ï¿½Ýµï¿½Ç°tankï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½moveï¿½ï¿½ï¿½tank ï¿½ï¿½×¢ï¿½â£ºï¿½ï¿½ï¿½Øµï¿½Tankï¿½ï¿½ Ö»ï¿½ï¿½left top width heightï¿½ï¿½ï¿½Ô£ï¿½
 		BasicTank nextTank = null;
 		try {
 			nextTank = tank.getClass().newInstance();
@@ -848,33 +848,34 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 				case DR:
 					nextTank.setLeft(tank.getLeft()+tank.getXSpeed());
 					nextTank.setTop(tank.getTop()+tank.getYSpeed());break;	
+				case STOP:break;
 			}
 		}
 		return nextTank;	
 	}
 	
-	private boolean isMovable(BasicTank tank){//Í¨¹ýÒ»ÏµÁÐ·½·¨µÄ·µ»ØÖµÅÐ¶ÏÌ¹¿ËÊÇ·ñÄÜ½øÐÐÏÂÒ»´ÎÒÆ¶¯
+	private boolean isMovable(BasicTank tank){//Í¨ï¿½ï¿½Ò»Ïµï¿½Ð·ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½Öµï¿½Ð¶ï¿½Ì¹ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Æ¶ï¿½
 		BasicTank nextTank = getNextTank(tank);
 		return !isCollisionTank(tank,nextTank)&&!isOverView(nextTank)&&!isCollisionObstacle(nextTank);
 	}	
 	
-	private boolean isCollisionTank(BasicTank thisTank,BasicTank nextTank){ //½«²ÎÊýnexttankÓëtanksÁÐ±íÖÐµÄËùÓÐtank±È½Ï,thistankÒ²ÓÃÓÚÅÐ¶ÏÊÇ·ñ³åÍ»
+	private boolean isCollisionTank(BasicTank thisTank,BasicTank nextTank){ //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nexttankï¿½ï¿½tanksï¿½Ð±ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½tankï¿½È½ï¿½,thistankÒ²ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Í»
 		for(BasicTank tank:tanks){
-			if(tank.getRectangle().intersects(nextTank.getRectangle())&&tank!=thisTank){//¾ØÐÎÖØµþÇÒ²»ÊÇ±¾ÉíÇÒ²»ÊÇÒÑ¾­±¬Õ¨µÄ				
+			if(tank.getRectangle().intersects(nextTank.getRectangle())&&tank!=thisTank){//ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½Ò²ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½Õ¨ï¿½ï¿½				
 				return true;}
 		}
 		return false;
 	}
 	
-	private boolean isCollisionObstacle(BasicTank nextTank){ //½«²ÎÊýnexttankÓëtanksÁÐ±íÖÐµÄËùÓÐtank±È½Ï,thistankÒ²ÓÃÓÚÅÐ¶ÏÊÇ·ñ³åÍ»
+	private boolean isCollisionObstacle(BasicTank nextTank){ //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nexttankï¿½ï¿½tanksï¿½Ð±ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½tankï¿½È½ï¿½,thistankÒ²ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Í»
 		for(BasicObstacle obstacle:obstacles){
-			if(obstacle.getRectangle().intersects(nextTank.getRectangle())&&!obstacle.isWalkable()){//¾ØÐÎÖØµþÇÒÕÏ°­ÎïÊÇ"²»¿ÉÐÐ×ß"µÄ				
+			if(obstacle.getRectangle().intersects(nextTank.getRectangle())&&!obstacle.isWalkable()){//ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"ï¿½ï¿½				
 				return true;}
 		}
 		return false;
 	}
 	
-	private boolean isOverView(BasicTank tank){ //¸ù¾ÝtankµÄleft top width height ÅÐ¶ÏÊÇ·ñ³¬³ö±ß½ç
+	private boolean isOverView(BasicTank tank){ //ï¿½ï¿½ï¿½tankï¿½ï¿½left top width height ï¿½Ð¶ï¿½ï¿½Ç·ñ³¬³ï¿½ï¿½ß½ï¿½
 
 		return (tank.getLeft()<0||tank.getTop()<Global.TOPDISTANCE||tank.getLeft()>Global.WIDTH-tank.getTankWidth()||tank.getTop()>Global.HEIGHT-tank.getTankHeight());
 		
@@ -882,14 +883,14 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	
 	private void tankCollisionItem(BasicTank tank){
 		for(BasicItem item:items){
-			if(tank.getRectangle().intersects(item.getRectangle())){ //Ì¹¿Ë×²µ½item Ôòµ÷ÓÃitemµÄaffect£¬È»ºóÉ¾³ý
+			if(tank.getRectangle().intersects(item.getRectangle())){ //Ì¹ï¿½ï¿½×²ï¿½ï¿½item ï¿½ï¿½ï¿½ï¿½ï¿½itemï¿½ï¿½affectï¿½ï¿½È»ï¿½ï¿½É¾ï¿½ï¿½
 				item.affect(tank);
 				removeItem(item);		
 			}
 		}
 	}
 	//-----------------------------------------------------------------------------------
-	//ÓÃÀ´ÅÐ¶ÏµÀ¾ßµÄÇé¿ö
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ïµï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½
 	private boolean isInvalidItemPosition(BasicItem item){
 		
 		if(item.getLeft()<0||item.getLeft()>Global.WIDTH-item.getItemWidth()||item.getTop()>(Global.HEIGHT-item.getItemHeight()-Global.TOPDISTANCE)||item.getTop()<Global.TOPDISTANCE){
@@ -906,12 +907,12 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	
 	
 	
-	//------------------Main·½·¨ ºÍ ÏÔÊ¾ÓÎÏ·´°¿Ú(ÔÝÍ£´°¿Ú¡¢ÓÎÏ·½áÊø´°¿Ú)-----------------------------------------------------------------
+	//------------------Mainï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ê¾ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Í£ï¿½ï¿½ï¿½Ú¡ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½)-----------------------------------------------------------------
 	public static void main(String[] args) {
 		launchMain();
 	}
 	
-	//----------------ÏÔÊ¾ÓÎÏ·Ö÷´°¿Ú-------------------------
+	//----------------ï¿½ï¿½Ê¾ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-------------------------
 	public static void launchMain(){
 		final JFrame frame = new JFrame();
 				
@@ -940,9 +941,9 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		
 		frame.getLayeredPane().add(label,new Integer(Integer.MIN_VALUE));
 		JPanel panel = (JPanel)frame.getContentPane();
-		panel.setOpaque(false);//ÉèÖÃÍ¸Ã÷
+		panel.setOpaque(false);//ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½
 		
-		//-------¿ªÊ¼°´Å¥
+		//-------ï¿½ï¿½Ê¼ï¿½ï¿½Å¥
 		tmpImage = Global.toolKit.getImage(loader.getResource("images/button_0.png"));
 		tmpIcon = new ImageIcon(tmpImage);
 		
@@ -960,7 +961,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		});
 		frame.add(button_0);
 		
-		//-------ÍË³ö°´Å¥
+		//-------ï¿½Ë³ï¿½ï¿½ï¿½Å¥
 		tmpImage = Global.toolKit.getImage(loader.getResource("images/button_1.png"));
 		tmpIcon = new ImageIcon(tmpImage);
 		
@@ -982,7 +983,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 	}
 	
 	
-	//----------------ÏÔÊ¾ÔÝÍ£´°¿Ú-------------------------------
+	//----------------ï¿½ï¿½Ê¾ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½-------------------------------
 	private void showPauseWindow(){
 		final JFrame frame = new JFrame();
 		
@@ -1016,7 +1017,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		JPanel panel = (JPanel)frame.getContentPane();
 		panel.setOpaque(false);
 		
-		//------¼ÌÐø°´Å¥	
+		//------ï¿½ï¿½ï¿½ï¿½Å¥	
 		tmpImage = Global.toolKit.getImage(loader.getResource("images/button_2.png"));
 		tmpIcon = new ImageIcon(tmpImage);
 		
@@ -1038,7 +1039,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		frame.add(button_2);
 		
 		
-		//------ÖØÐÂ¿ªÊ¼°´Å¥
+		//------ï¿½ï¿½ï¿½Â¿ï¿½Ê¼ï¿½ï¿½Å¥
 		tmpImage = Global.toolKit.getImage(loader.getResource("images/button_3.png"));
 		tmpIcon = new ImageIcon(tmpImage);
 		
@@ -1058,7 +1059,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		frame.add(button_3);
 		
 		
-		//------»Øµ½Ö÷½çÃæ°´Å¥
+		//------ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ°´Å¥
 		tmpImage = Global.toolKit.getImage(loader.getResource("images/button_4.png"));
 		tmpIcon = new ImageIcon(tmpImage);
 		
@@ -1077,13 +1078,13 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		});
 		frame.add(button_4);
 
-		TankClient.this.setEnabled(false);//½«ºóÃæµÄ´°¿ÚÉèÎª²»¿É¼¤»î
-		frame.setAlwaysOnTop(true);//ÈÃ´°¿ÚÊ¼ÖÕÔÚ×îÉÏ
-		frame.setUndecorated(true);//½ûÓÃframe×°ÊÎ
+		TankClient.this.setEnabled(false);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½
+		frame.setAlwaysOnTop(true);//ï¿½Ã´ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		frame.setUndecorated(true);//ï¿½ï¿½ï¿½ï¿½frame×°ï¿½ï¿½
 		frame.setVisible(true);
 	}
 	
-	//----------------ÏÔÊ¾ÓÎÏ·½áÊø´°¿Ú-----------------------
+	//----------------ï¿½ï¿½Ê¾ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½-----------------------
 	private void showGameOverWindow(){
 		final JFrame frame = new JFrame();
 		
@@ -1116,9 +1117,9 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		
 		frame.getLayeredPane().add(label,new Integer(Integer.MIN_VALUE));
 		JPanel panel = (JPanel)frame.getContentPane();
-		panel.setOpaque(false);//ÉèÖÃÍ¸Ã÷
+		panel.setOpaque(false);//ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½
 				
-		//-----ÖØÐÂ¿ªÊ¼°´Å¥
+		//-----ï¿½ï¿½ï¿½Â¿ï¿½Ê¼ï¿½ï¿½Å¥
 		tmpImage = Global.toolKit.getImage(loader.getResource("images/button_5.png"));
 		tmpIcon = new ImageIcon(tmpImage);
 		
@@ -1138,7 +1139,7 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		frame.add(button_5);
 		
 		
-		//-----»Øµ½Ö÷½çÃæ°´Å¥
+		//-----ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ°´Å¥
 		tmpImage = Global.toolKit.getImage(loader.getResource("images/button_6.png"));
 		tmpIcon = new ImageIcon(tmpImage);
 		
@@ -1157,9 +1158,9 @@ public class TankClient extends Frame implements TankListener,BulletListener,Exp
 		});
 		frame.add(button_6);
 
-		TankClient.this.setEnabled(false);//½«ºóÃæµÄ´°¿ÚÉèÎª²»¿É¼¤»î
-		frame.setAlwaysOnTop(true);//ÈÃ´°¿ÚÊ¼ÖÕÔÚ×îÉÏ
-		frame.setUndecorated(true);//½ûÓÃframe×°ÊÎ
+		TankClient.this.setEnabled(false);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½
+		frame.setAlwaysOnTop(true);//ï¿½Ã´ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		frame.setUndecorated(true);//ï¿½ï¿½ï¿½ï¿½frame×°ï¿½ï¿½
 		frame.setVisible(true);
 	}
 
