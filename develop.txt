@@ -2,4 +2,6 @@ fix bug
 this is a file for branch tests
 feature 1 fixed conflict
 dev change
-change before (feature3-change) commit
+change other's change before commit 
+(feature3-change)
+
