@@ -4,4 +4,5 @@ feature 1 fixed conflict
 dev change
 change other's change before commit 
 (feature3-change)
+rebase test
 
